@@ -5,7 +5,6 @@ import seaborn as sns
 import yfinance as yf
 import matplotlib.pyplot as plt
 
-
 def load_data(file_path):
     df = pd.read_csv(file_path)
     return df
