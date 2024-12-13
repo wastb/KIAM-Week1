@@ -42,7 +42,7 @@ def topPublisher(df):
 def top_publisher_plot(df):
     top_publishers = df['publisher'].value_counts().head(20)
     plt.figure(figsize=(14, 8))
-    sns.barplot(x=top_publishers.index, y=top_publishers.values, palette="viridis")
+    sns.barplot(x=top_publishers.index, y=top_publishers.values)
     plt.xticks(rotation=90)
     plt.title('Top 20 Publishers by Number of Articles')
     plt.xlabel('Publisher')
@@ -178,6 +178,24 @@ def domain_plot(df):
   plt.tight_layout()
   plt.show();
 
+def sentiment_score_dist(df):
+    # Plotting the distribution of sentiment scores
+    plt.figure(figsize=(12, 6))
+    sns.histplot(df['sentiment'], bins=30, kde=True)
+    plt.title('Distribution of Sentiment Scores')
+    plt.xlabel('Sentiment Score')
+    plt.ylabel('Frequency')
+    plt.grid(True)
+    plt.show();
 
+def sentiment_class_plot(df):
+    
+    #Plot the distribution of the custom sentiment classes.
+    plt.figure(figsize=(10, 6))
+    sns.countplot(x='sentiment_class', data=df)
+    plt.title('Distribution of Sentiments in Headlines')
+    plt.xlabel('Sentiment')
+    plt.ylabel('Number of Articles')
+    plt.show();  
 
 
