@@ -1,4 +1,4 @@
-# Leveraging-AI-Techniques-for-Financial-News-Sentiment-Analysis-and-Stock-Prediction
+# Financial News Sentiment Analysis and Stock Prediction
 
 This project aims to use AI techniques to analyze financial news sentiment and predict stock prices. The project involves collecting financial news articles, analyzing their sentiment, and predicting stock movements based on the analyzed sentiment.
 
