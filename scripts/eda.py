@@ -20,7 +20,7 @@ def check_missing_values(df):
     return df.isnull().sum()
 
 def convert_date(df):
-
+    
     """Convert the 'Date' column to datetime and set it as the index."""
     df['Date'] = pd.to_datetime(df['Date'])
     return df
