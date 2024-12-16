@@ -4,6 +4,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+def load_data(file_path):
+    df = pd.read_csv(file_path)
+    return df
+
 def missing_values(df):
 
     return df.isnull().sum()
@@ -178,24 +182,6 @@ def domain_plot(df):
   plt.tight_layout()
   plt.show();
 
-def sentiment_score_dist(df):
-    # Plotting the distribution of sentiment scores
-    plt.figure(figsize=(12, 6))
-    sns.histplot(df['sentiment'], bins=30, kde=True)
-    plt.title('Distribution of Sentiment Scores')
-    plt.xlabel('Sentiment Score')
-    plt.ylabel('Frequency')
-    plt.grid(True)
-    plt.show();
 
-def sentiment_class_plot(df):
-    
-    #Plot the distribution of the custom sentiment classes.
-    plt.figure(figsize=(10, 6))
-    sns.countplot(x='sentiment_class', data=df)
-    plt.title('Distribution of Sentiments in Headlines')
-    plt.xlabel('Sentiment')
-    plt.ylabel('Number of Articles')
-    plt.show();  
 
 
