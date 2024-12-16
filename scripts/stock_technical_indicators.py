@@ -55,4 +55,8 @@ def plot_macd(df):
     plt.ylabel('Value')
     plt.legend()
     plt.grid(True)
-    plt.show()
+    plt.show();
+
+def calculate_daily_return(stock_data):
+    stock_data['daily_return'] = stock_data['Close'].pct_change()
+    return stock_data
