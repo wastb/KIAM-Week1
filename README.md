@@ -1,4 +1,4 @@
-# Financial News Sentiment Analysis and Stock Prediction
+# Leveraging Financial News Sentiment for Stock Market Insights.
 
 This project aims to use AI techniques to analyze financial news sentiment and predict stock prices. The project involves collecting financial news articles, analyzing their sentiment, and predicting stock movements based on the analyzed sentiment.
 
@@ -42,19 +42,34 @@ To set up this project, you will need to clone the repository and install the ne
 
 ## Usage
 
-Currently, the project is in the preprocessing stage. Here are the steps you can follow to preprocess the data and perform sentiment analysis:
-
-1. **Sentiment Analysis**: Run the `sentiment.py` script to perform sentiment analysis on the cleaned data.
+1. **Sentiment Analysis**: Run the `sentiment_analyzer.py` script to perform sentiment analysis on the cleaned data.
 
     ```bash
-    python scripts/sentiment.py
+    python scripts/sentiment_analyzer.py
     ```
 
-2. **Exploratory Data Analysis (EDA)**: Use the `eda.py` script to conduct EDA on the dataset to understand the data distribution and key characteristics.
+2. **Exploratory Data Analysis (EDA)**: Use the `news_eda.py` and `stock_eda.py` script to conduct EDA on the dataset to understand the data distribution and key characteristics.
 
     ```bash
-    python scripts/eda.py
+    python scripts/news_eda.py
+    python scripts/stock_eda.py
     ```
 
-3. **Notebooks**: The `notebooks/` directory contains Jupyter notebooks for model development and analysis for each stock (e.g., `AAPL_model.ipynb` for Apple). You can use these notebooks to experiment with different models and perform detailed analysis.
+3. **Notebooks**: The `notebooks/` directory contains Jupyter notebooks for Quantitative analysis, Sentiment Analysis and Correlation Analysis for each stock (e.g., `AAPL_quantitative_analysis.ipynb` for Apple). You can use these notebooks to experiment with different models and perform detailed analysis.
+
+## Contributing
+
+We welcome contributions to this project! If you would like to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit them (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a new Pull Request.
+
+Please ensure your code adheres to the project's coding standards and is well-documented.
+
+## License
+
+This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for more information.
 
