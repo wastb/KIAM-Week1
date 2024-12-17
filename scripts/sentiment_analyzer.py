@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 from rake_nltk import Rake
 nltk.download('punkt_tab')
 nltk.download('stopwords')
@@ -41,10 +43,9 @@ def sentiment_category(df):
     return df
 
 def ranked_phrases(df):
-    r = Rake()
+    r = Rake(include_repeated_phrases=False)
     headlines = df['headline'].dropna().tolist()
     preprocessed_headlines = [preprocess_text(headline) for headline in headlines]
-
     ranked_phrases = []
 
     for i in preprocessed_headlines:
@@ -55,19 +56,6 @@ def ranked_phrases(df):
     
     key_phrases = pd.DataFrame(ranked_phrases, columns = ['score','phrase'])
     return key_phrases
-
-def key_words(df):
-    r = Rake()
-    headlines = df['headline'].dropna().tolist()
-    preprocessed_headlines = [preprocess_text(headline) for headline in headlines]
-
-    key_words = []
-
-    for i in preprocessed_headlines:
-       r.extract_keywords_from_text(i)
-       key_words.append(r.get_word_degrees())
-    
-    return key_words
 
 def sentiment_score_dist(df):
     # Plotting the distribution of sentiment scores
